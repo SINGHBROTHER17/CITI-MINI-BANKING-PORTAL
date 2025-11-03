@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Welcome, {{ user }} 👋</h3>
+<div class="card mt-3">
+  <div class="card-body">
+    <h5>Balance: ₹{{ "%.2f"|format(balance) }}</h5>
+    <a href="/transfer" class="btn btn-primary mt-2">Transfer Money</a>
+  </div>
+</div>
+
+<h4 class="mt-4">Transaction History</h4>
+<table class="table table-striped">
+  <tr><th>ID</th><th>Sender</th><th>Receiver</th><th>Amount</th><th>Timestamp</th></tr>
+  {% for t in transactions %}
+  <tr>
+    <td>{{t[0]}}</td><td>{{t[1]}}</td><td>{{t[2]}}</td><td>{{t[3]}}</td><td>{{t[4]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

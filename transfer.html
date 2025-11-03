@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Transfer Money</h3>
+<form method="POST">
+  <div class="mb-3"><input class="form-control" name="receiver" placeholder="Receiver Username" required></div>
+  <div class="mb-3"><input type="number" class="form-control" name="amount" placeholder="Amount" required></div>
+  <button class="btn btn-success">Send</button>
+  <a href="/dashboard" class="btn btn-secondary">Back</a>
+</form>
+{% endblock %}
